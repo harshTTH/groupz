@@ -1,7 +1,9 @@
 import React from 'react';
 import validator from 'validator';
-import axios from 'axios';
-import SignupForm from './forms/SignupForm'
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import SignupForm from './forms/SignupForm';
+import {signup} from '../actions/users';
 
 class SignUp extends React.Component{
   constructor(props){
@@ -22,43 +24,35 @@ class SignUp extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-  handleSubmit(e){
+  handleSubmit(){
     if(this.state.pass !== this.state.cnfrmPass){
       this.setState({errCnfrmPass:true})
-    }else if(this.state.errPass){}
-    else{
+    }else if(!this.state.errPass){
       this.setState({
         errCnfrmPass:false,
         loading:true
       });
-      axios({
-        method: 'post',
-        url   : '/signup',
-        data  : {
-          name  : this.state.name,
-          mobile: this.state.mobile,
-          email : this.state.email,
-          pass  : this.state.pass
-        },
-        timeout : 15000,
-        withCredentials:true, 
+      this.props.signup({
+          name:this.state.name,
+          email:this.state.email,
+          pass:this.state.pass,
+          mobile:this.state.mobile
       })
-      .then(function respRecieve(data){
+      .then(()=>{
         this.setState({
           loading:false
         });
-        console.log(data);
-      }.bind(this))
-      .catch(function respFailed(error){
+        this.props.history.push('/chat');
+        })
+      .catch(()=>{
         this.setState({
           error:true,
           loading:false
         })
-      }.bind(this));
+    });
     }
   };
   handleChange(e){
-
     switch(e.target.name){
       case 'email':
         this.setState({
@@ -107,6 +101,10 @@ class SignUp extends React.Component{
   }
 }
 
-export default SignUp;
-
-
+SignUp.propTypes = {
+    signup:PropTypes.func.isRequired,
+    history:PropTypes.shape({
+        push:PropTypes.func.isRequired
+    }).isRequired
+}
+export default connect(null,{signup})(SignUp);

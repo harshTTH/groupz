@@ -7,6 +7,12 @@ export default {
 	        url:'/api/auth',
 	        data:{credentials},
 	      })
-      	.then(res=> res.data.user).catch((err)=>console.log(err))
+      	.then(res=> res.data.user),
+		signup:(credentials)=> axios({
+           method: 'post',
+           url   : '/api/signup',
+           data  : {credentials},
+	   }).then((res)=> res.data.user)
+
       }
 }

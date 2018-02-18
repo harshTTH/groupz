@@ -5,7 +5,9 @@ import Header from './Header';
 const Home = (props) => (
   <div id="main-cont" className="ui container">
     <Header/>
-    {props.children}
+    <div id="chat-cont">
+        {props.children}
+    </div>
   </div>
 );
 

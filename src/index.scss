@@ -13,6 +13,11 @@ body {
       height:100vh;
       background-color: $background-color;
 }
+#chat-cont{
+    height:100vh;
+    margin:0;
+    background-color: #fff;
+}
 #head-nav{
   font-size: 1.2em;
   span{
