@@ -27,8 +27,10 @@ class LogIn extends React.Component{
       error:{email:!load}
     })
     if(load){
-      this.props.login({email:this.state.email,pass:this.state.pass}).then(()=>this.props.history.push('/'))
-      .catch((err)=>{
+      this.props.login({email:this.state.email,pass:this.state.pass}).then(()=>{
+          this.props.history.push('/chat');
+      })
+      .catch(()=>{
         this.setState(
           {
             error:{global:true},
