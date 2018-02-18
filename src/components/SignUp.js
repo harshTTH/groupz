@@ -44,11 +44,12 @@ class SignUp extends React.Component{
         });
         this.props.history.push('/chat');
         })
-      .catch(()=>{
+      .catch((err)=>{
         this.setState({
           error:true,
           loading:false
-        })
+      });
+      console.log(err.response);
     });
     }
   };

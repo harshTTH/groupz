@@ -8,11 +8,10 @@ export default {
 	        data:{credentials},
 	      })
       	.then(res=> res.data.user),
-		signup:(credentials)=> axios({
+		signup:(user)=> axios({
            method: 'post',
            url   : '/api/signup',
-           data  : {credentials},
+           data  : {user},
 	   }).then((res)=> res.data.user)
-
-      }
+     }
 }

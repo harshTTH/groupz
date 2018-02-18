@@ -9,7 +9,7 @@ const SignupForm = (props) => (
           <Grid.Row>
               <Grid.Column id="frm-clmn">
                 {props.error &&
-                    <Message style={{'marginTop':'10px'}} content="Something Went Wrong" negative/>}
+                    <Message style={{'marginTop':'10px'}} content="Email Already Registered!" negative/>}
                 <Form onSubmit={props.handleSubmit} style={{'padding':'5%'}} loading={props.loading}>
 
                   <Form.Group widths='equal'>
@@ -27,7 +27,7 @@ const SignupForm = (props) => (
                   </Form.Group>
 
                   <Popup
-                    trigger={<Form.Input name="email" label="Enter Email" placeholder="example@example.com" onChange={props.handleChange} value={props.email} required fluid error={props.errEmail}/>}
+                    trigger={<Form.Input name="email" label="Enter Email" placeholder="example@example.com" onChange={props.handleChange} value={props.email} required fluid error={props.errEmail || props.error}/>}
                     content='Invalid Email'
                     open={props.errEmail}
                     position='right center'
