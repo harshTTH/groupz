@@ -49,7 +49,6 @@ class SignUp extends React.Component{
           error:true,
           loading:false
         });
-      console.log(err.response);
     });
     }
   };

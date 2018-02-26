@@ -21,7 +21,7 @@ class Chat extends React.Component{
     });
     api.user.resend(this.props.token).then(status=>
       this.setState({
-        status:status
+        status
       })
     )
   }
