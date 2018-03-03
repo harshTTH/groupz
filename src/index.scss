@@ -1,22 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-$main-color:#087f23;
-$theme-color:#4caf50;
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+$main-color-dark:#004c8c;
+$main-color-light:#58a5f0;
 $font-color:white;
 $form-back-color:white;
-$background-color:#80e27e;
+$main-color:#e3f2fd;
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
-}
-#main-cont{
-      height:100vh;
-      background-color: $background-color;
-}
-#chat-cont{
-    height:100vh;
-    margin:0;
-    background-color: #fff;
+  font-family: 'Quicksand', sans-serif;
 }
 #head-nav{
   font-size: 1.2em;
@@ -24,36 +15,46 @@ body {
       font-weight:bolder;
       font-size: 1.5em;
   }
-  background-color: $main-color;
+  background-color: $main-color-dark;
   color: $font-color;
 }
 #frm{
-  margin-top:6%;
   #frm-clmn{
+    margin-top: 5%;
     background-color: $form-back-color;
   }
   form{
     font-size: 1.2em;
     input{
       &:focus{
-        border-color:$main-color;
+        border-color:$main-color-dark;
       }
     }
     a{
       text-decoration: none;
-      color:$theme-color;
+      color:$main-color-light;
       &:hover{
         text-decoration: underline;
       }
     }
   }
 }
-.fade-enter {
-  opacity: 0;
-  z-index: 1;
+#memList{
+  overflow-y: auto;
 }
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 250ms ease-in;
+#memListBtn{
+  position:fixed;
+  bottom:10%;
+  right:10%;
+}
+#chatWindow{
+  margin:1% 4% 1% 4%;
+  min-height: 72vh;
+  border: 1px solid #b3c0c9;
+  border-radius: 1%;
+  background-color:#fff;
+}
+#msgInput{
+  margin:0% 4% 0% 4%;
+  width:100%;
 }

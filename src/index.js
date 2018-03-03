@@ -16,6 +16,7 @@ const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)
 if(localStorage.groupzJWT){
 	const payload = decode(localStorage.groupzJWT);
 	store.dispatch(userLoggedIn({
+		name:payload.name,
 		email:payload.email,
 		confirmed:payload.confirmed,
 		token:localStorage.groupzJWT

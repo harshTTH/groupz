@@ -1,44 +1,46 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif; }
-
-#main-cont {
-  height: 100vh;
-  background-color: #80e27e; }
-
-#chat-cont {
-  height: 100vh;
-  margin: 0;
-  background-color: #fff; }
+  font-family: 'Quicksand', sans-serif; }
 
 #head-nav {
   font-size: 1.2em;
-  background-color: #087f23;
+  background-color: #004c8c;
   color: white; }
   #head-nav span {
     font-weight: bolder;
     font-size: 1.5em; }
 
-#frm {
-  margin-top: 6%; }
-  #frm #frm-clmn {
-    background-color: white; }
-  #frm form {
-    font-size: 1.2em; }
-    #frm form input:focus {
-      border-color: #087f23; }
-    #frm form a {
-      text-decoration: none;
-      color: #4caf50; }
-      #frm form a:hover {
-        text-decoration: underline; }
+#frm #frm-clmn {
+  margin-top: 5%;
+  background-color: white; }
 
-.fade-enter {
-  opacity: 0;
-  z-index: 1; }
+#frm form {
+  font-size: 1.2em; }
+  #frm form input:focus {
+    border-color: #004c8c; }
+  #frm form a {
+    text-decoration: none;
+    color: #58a5f0; }
+    #frm form a:hover {
+      text-decoration: underline; }
 
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 250ms ease-in; }
+#memList {
+  overflow-y: auto; }
+
+#memListBtn {
+  position: fixed;
+  bottom: 10%;
+  right: 10%; }
+
+#chatWindow {
+  margin: 1% 4% 1% 4%;
+  min-height: 72vh;
+  border: 1px solid #b3c0c9;
+  border-radius: 1%;
+  background-color: #fff; }
+
+#msgInput {
+  margin: 0% 4% 0% 4%;
+  width: 100%; }

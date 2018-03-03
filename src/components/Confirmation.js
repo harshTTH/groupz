@@ -23,10 +23,10 @@ class Confirmation extends React.Component {
   render() {
     const {loading, success} = this.state;
     return (
-    <div>
+    <div style={{"margin":"-14px"}}>
       {
-        loading && <Message icon={true}>
-            <Icon name="circle notched" loading={true}/>
+        loading && <Message icon>
+            <Icon name="circle notched" loading/>
             <Message.Header>Validating your email</Message.Header>
           </Message>
       }

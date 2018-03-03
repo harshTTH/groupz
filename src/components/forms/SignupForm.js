@@ -4,7 +4,7 @@ import {Link} from  'react-router-dom';
 import {Form,Button,Grid,Popup,Message} from 'semantic-ui-react';
 
 const SignupForm = (props) => (
-    <div id="main-cont">
+    <div>
         <Grid id="frm" columns={2} centered container>
           <Grid.Row>
               <Grid.Column id="frm-clmn">
@@ -50,7 +50,7 @@ const SignupForm = (props) => (
                   <Grid stackable>
                     <Grid.Row>
                       <Grid.Column floated="left" width={5}>
-                        <Button size='large' inverted color='green' type="submit">SignUp</Button>
+                        <Button size='large' inverted color='blue' type="submit">SignUp</Button>
                       </Grid.Column>
                       <Grid.Column floated="right" width={5}>
                         <Link to="/">Already Have An Account</Link>

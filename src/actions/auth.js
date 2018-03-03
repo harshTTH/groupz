@@ -32,3 +32,19 @@ export const confirm = (token) => ((dispatch) => (
 		dispatch(userLoggedIn(user))
 	}))
 ));
+
+export const forgotPass = (email) => (() => (
+	api.user.forgotPass(email).then(status=>status)
+));
+
+export const resendEmail = (token) => (() => (
+	api.user.resend(token).then(status=>status)
+));
+
+export const verifyLink = (token) => (() => (
+	api.user.verifyLink(token)
+));
+
+export const resetPassReq = (token,pass) => (() => (
+	api.user.resetPassReq(token,pass)
+));

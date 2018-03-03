@@ -4,7 +4,7 @@ import {Form,Button,Grid,Message} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 const LoginForm = (props) =>(
-    <div id="main-cont">
+    <div>
         <Grid id="frm" columns={2} centered inverted container>
             <Grid.Row>
                 <Grid.Column id='frm-clmn'>
@@ -28,10 +28,10 @@ const LoginForm = (props) =>(
                     <Grid stackable>
                       <Grid.Row>
                         <Grid.Column width={4}>
-                          <Button inverted color='green' type="submit">LogIn</Button>
+                          <Button inverted color='blue' type="submit">LogIn</Button>
                         </Grid.Column>
                         <Grid.Column>
-                          <Link to="#">Forgot Password</Link>
+                          <Link to="/reset">Forgot Password</Link>
                         </Grid.Column>
                       </Grid.Row>
                     </Grid>

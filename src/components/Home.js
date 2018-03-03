@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 import Header from './Header';
 
 const Home = (props) => (
-  <div id="main-cont" className="ui container">
+  <div>
     <Header/>
-    <div id="chat-cont">
+    <div style={{
+        "backgroundColor":"#e3f2fd",
+        "height":"100vh",
+        "margin":"0",
+      }}>
         {props.children}
     </div>
   </div>
