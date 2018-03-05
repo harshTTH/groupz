@@ -15,6 +15,9 @@ class Chat extends React.Component{
     this.socket = io('http://localhost:3000/',{query:"email="+props.email});
     this.handleResendEmail = this.handleResendEmail.bind(this);
   }
+  getChildContext() {
+   return {socket: this.socket, history:this.props.history};
+  }
   handleResendEmail(){
     this.setState({
       clicked:true,
@@ -33,6 +36,7 @@ class Chat extends React.Component{
         handleResendEmail= {this.handleResendEmail}
         status = {this.state.status}
         clicked = {this.state.clicked}
+        name={this.props.name}
       />
     )
   }
@@ -42,13 +46,21 @@ class Chat extends React.Component{
 const mapStateToProps = (state) => ({
   isConfirmed: !!state.user.confirmed,
   token : state.user.token,
-  email: state.user.email
+  email: state.user.email,
+  name:state.user.name
 })
 
 Chat.propTypes = {
   resendEmail:PropTypes.func.isRequired,
   isConfirmed: PropTypes.bool.isRequired,
   token:PropTypes.string.isRequired,
-  email:PropTypes.string.isRequired
+  email:PropTypes.string.isRequired,
+  name:PropTypes.string.isRequired,
+  history:PropTypes.object.isRequired
+}
+
+Chat.childContextTypes = {
+  socket:PropTypes.object,
+  history:PropTypes.object
 }
 export default connect(mapStateToProps,{resendEmail})(Chat);

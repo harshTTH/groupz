@@ -50,6 +50,12 @@ export default {
 				 method:'post',
 				 url:'api/members/fetch',
 				 data:{email}
-			 }).then((res)=>res.data.users)
+			 }).then((res)=>res.data.users),
+
+			 fetchMessages:(token)=>axios({
+				 method:'post',
+				 url:'api/members/fetch/msg',
+				 data:{token}
+			 }).then(res=>res.data.messages)
 		 }
 }

@@ -48,13 +48,35 @@ body {
   right:10%;
 }
 #chatWindow{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction:column;
   margin:1% 4% 1% 4%;
-  min-height: 72vh;
+  height: 72vh;
   border: 1px solid #b3c0c9;
   border-radius: 1%;
   background-color:#fff;
+  overflow-y: scroll;
 }
 #msgInput{
   margin:0% 4% 0% 4%;
   width:100%;
+}
+
+#chatMsg{
+  margin:1%;
+  max-width: 60%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  border: 1px solid #b3c0c9;
+  box-shadow: 2px 2px 2px #b3c0c9;
+  word-wrap: break-word;
+  #sender{
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  #msg{
+    font-size: 1.5em;
+    font-weight: 400;
+  }
 }

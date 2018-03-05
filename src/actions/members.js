@@ -18,3 +18,7 @@ export const fetchUsers = (email) => (dispatch) => {
 export const changeStatus = (email,status) => (dispatch) => {
   dispatch(changedStatus(email,status))
 }
+
+export const fetchMessages = (token) => () => (
+  api.members.fetchMessages(token)
+)

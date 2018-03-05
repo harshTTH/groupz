@@ -9,7 +9,7 @@ const ChatPage = ({
   isConfirmed,
   handleResendEmail,
   clicked,
-  status,}) => (<Grid style={{"margin":"-14px"}} divided>
+  status,name}) => (<Grid style={{"margin":"-14px"}} divided>
     <Grid.Row>
       <Grid.Column width={12}>
       {
@@ -35,8 +35,8 @@ const ChatPage = ({
         </Message>)
       }
       <ChatWindow />
-      <MessageInput/>
-    </Grid.Column>  
+      <MessageInput name={name}/>
+    </Grid.Column>
     <Responsive as={Grid.Column} width={4} minWidth={768}>
       <MemberList height="80vh"/>
     </Responsive>
@@ -61,6 +61,7 @@ ChatPage.propTypes = {
   handleResendEmail:PropTypes.func.isRequired,
   status:PropTypes.bool.isRequired,
   clicked:PropTypes.bool.isRequired,
+  name:PropTypes.string.isRequired
 }
 
 export default ChatPage;
